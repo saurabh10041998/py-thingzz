@@ -8,7 +8,7 @@ class cached:
             return self.cached_data[args]
         except KeyError:
             self.cached_data[args] = ret = self.func(*args)
-            return  ret
+            return ret
 
 
 # doctests should be written here
@@ -18,6 +18,7 @@ class cached:
 def compute(x: int) -> int:
     print(f"Called with {x}")
     return x * x
+
 
 def main() -> int:
     """only doctests that will pass
@@ -33,5 +34,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     exit(main())
-
-
