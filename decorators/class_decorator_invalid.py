@@ -11,6 +11,9 @@ class cached:
             return  ret
 
 
+# doctests should be written here
+# but decorator strips off the docstring
+# hence removing the doctest
 @cached
 def compute(x: int) -> int:
     print(f"Called with {x}")
@@ -26,6 +29,7 @@ def main() -> int:
     4
     """
     return 0
+
 
 if __name__ == "__main__":
     exit(main())
