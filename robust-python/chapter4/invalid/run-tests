@@ -7,19 +7,19 @@ die() {
 }
 
 run_type_checker() {
-    find . -maxdepth 1 -name *.py | \
+    find . -maxdepth 1 -name '*.py' | \
         xargs --verbose -I{} mypy {} || \
             die "Type checking failed"
 
     # Run the stricter mode but don't die
     # if errors
-    find . -maxdepth 1 -name *.py | \
+    find . -maxdepth 1 -name '*.py' | \
         xargs --verbose -I{} mypy --strict {} || \
             true
 }
 
 run_doc_tests() {
-    find . -maxdepth 1 -name *.py | \
+    find . -maxdepth 1 -name '*.py' | \
         xargs --verbose -I{} \
             pytest --doctest-modules {} || \
                 die "Doc tests failure"
